@@ -7,7 +7,7 @@ WORKDIR /application
 ADD pom.xml .
 ADD src src
 RUN echo "Building application"
-RUN mvn package -DskipTests
+RUN mvn -q package -DskipTests
 
 FROM arm32v7/openjdk:11
 ARG JAR_FILE=/application/target/*.jar
