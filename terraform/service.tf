@@ -44,7 +44,7 @@ resource "kubernetes_cron_job" "demo" {
           spec {
             container {
               name    = local.ping_neo4j
-              image             = "08021986/${local.ping_neo4j}:v1"
+              image             = "08021986/${local.ping_neo4j}:latest"
               image_pull_policy = "Always"
               env {
                 name = "NEO4J_URL"
